@@ -1,0 +1,22 @@
+---
+- name: install net-misc/minidlna
+  portage: package=net-misc/minidlna
+
+- name: configure minidlna
+  template: >
+    src=minidlna.conf.j2
+    dest=/etc/minidlna.conf
+    owner=root group=root mode=0644
+  notify: restart minidlna
+
+- name: configure logrotate
+  template: >
+    src=logrotate.j2
+    dest=/etc/logrotate.d/minidlna
+    owner=root group=root mode=0644
+
+# Trigger handlers now to avoid unnecessary restarts.
+- meta: flush_handlers
+
+- name: enable and start minidlna
+  service: name=minidlna enabled=yes state=started

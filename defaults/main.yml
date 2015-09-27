@@ -1,0 +1,34 @@
+---
+# The name you want your media server seen as.
+minidlna_friendly_name: "{{ ansible_hostname | capitalize }}"
+
+# Network interfaces to serve. Defaults to all.
+minidlna_interfaces: []
+
+# Notify interval in seconds.
+minidlna_notify_interval: 60
+
+# Path to the directories containing the media files minidlna should share.
+#
+# You can also restrict an entry to a specific media type, you do this by using
+# the following syntax: the letter 'A', 'V' or 'P', followed by a comma (',')
+# followed by the path. The meaning of the first letter is as follows:
+#   'A' for audio files
+#   'V' for video files
+#   'P' for image files
+minidlna_media_dirs: []
+
+# Set to 'yes' to enable inotify monitoring of the files under media_dir to
+# automatically discover new files. Set to 'no' to disable inotify.
+minidlna_inotify: yes
+
+# Use a different container as the root of the tree exposed to clients.
+# The possible values are:
+#   '.' to use the standard container (this is the default);
+#   'B' to use the "Browse Directory" container;
+#   'M' to use the "Music" container;
+#   'V' to use the "Video" container;
+#   'P' to use the "Pictures" container.
+# If you specify 'B' and the client device is audio only, then "Music/Folders"
+# will be used as root container and you wont see Videos.
+minidlna_root_container: '.'

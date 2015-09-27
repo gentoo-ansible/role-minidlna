@@ -1,0 +1,8 @@
+# {{ ansible_managed }}
+
+/var/log/minidlna/*.log {
+	missingok
+	compress
+	delaycompress
+	copytruncate
+}
