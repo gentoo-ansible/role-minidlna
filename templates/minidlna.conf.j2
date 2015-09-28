@@ -23,7 +23,7 @@ media_dir={{ item }}
 #merge_media_dirs=no
 
 # set this if you want to customize the name that shows up on your clients
-friendly_name="{{ minidlna_friendly_name }}"
+friendly_name={{ minidlna_friendly_name }}
 
 # set this if you would like to specify the directory where you want MiniDLNA to store its database and album art cache
 #db_dir=/var/lib/minidlna
@@ -74,7 +74,7 @@ model_number=1
 #   + "P" - "Pictures"
 #   + Or, you can specify the ObjectID of your desired root container (eg. 1$F for Music/Playlists)
 # if you specify "B" and client device is audio-only then "Music/Folders" will be used as root
-root_container="{{ minidlna_root_container }}"
+root_container={{ minidlna_root_container }}
 
 # always force SortCriteria to this value, regardless of the SortCriteria passed by the client
 #force_sort_criteria=+upnp:class,+upnp:originalTrackNumber,+dc:title
